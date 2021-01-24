@@ -43,10 +43,14 @@
         <h3>Transaction Commands</h3>
         <button class="bc2" id="b4" onclick=(voidTrans())>Clear</button>
 <!--        <button class="bc1" id="b5" onclick=(discount())>Discount</button>-->
-        <button class="bc3" id="b6" onclick=(overrideAdd())>Override Add</button>
-        <button class="bc1" id="b7" onclick=(overrideSub()) style="font-size:10px;">Override Subtract</button>
         <button class="bc2" id="b8" onclick=(quantity())>Quantity</button>
         <button class="bc3" id="b9" onclick=(eraseLast())>Clear Last</button>
+        <button class="bc1" id="b20" onclick=(managerOp())>Manager Override</button>
+        <div class="mgr">
+            <button class="bc3" id="b6" onclick=(overrideAdd())>Override Add</button>
+            <button class="bc1" id="b7" onclick=(overrideSub()) style="font-size:10px;">Override Subtract</button>
+            <button class="bc2" id="b6" onclick=(mgrClose())>Exit Override</button>
+        </div>
     </div>
     
     <div class="container-3">
