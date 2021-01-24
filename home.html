@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <!-- This is the title which appears in the tab at the top of the browser -->
+  <title>Online POS</title>
+  <!-- This is the description of your page which will be used for search indexing -->
+  <meta name="description" content="Online Point of Salw">
+  <!-- This is the viewport your website supports, and how it responds to zoomings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- These are imports for stylesheets to change the appearance of the site -->
+  <link rel="stylesheet" href="src/assets/css/normalize.css">
+  <link rel="stylesheet" href="src/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Red+Hat+Display:wght@400;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <h1 id="name">Online Point of Sale</h1>
+<!--    <button class="button" onclick=(getName())>Change Company Name</button>-->
+  <!-- This is the main JavaScript file which executes logic for your site -->
+    <div class="container-1">
+        <h3>Food & Beverage</h3>
+        <button class="bc1" id="b1" onclick=(b1()) style="font-size:15px;">Chicken Nuggets</button>
+        <button class="bc2" id="b2" onclick=(b2()) style="font-size:10px;">Chicken Sandwich</button>
+        <button class="bc3" id="b3" onclick=(b3())>Cheese Burger</button>
+        <button class="bc1" id="b11" onclick=(b11())>Fries</button>
+        <button class="bc2" id="b12" onclick=(b12())>Salad</button>
+        <button class="bc3" id="b13" onclick=(b13())>Ice Cream</button>
+        <button class="bc1" id="b14" onclick=(b14())>Chilli</button>
+        <button class="bc2" id="b15" onclick=(b15())>Pizza</button>
+        <button class="bc3" id="b16" onclick=(b16())>Soup</button>
+        <br>
+        <h3 class="menu-title">Drinks</h3>
+        <button class="bc4" id="b17" onclick=(b17())>Small</button>
+        <button class="bc5" id="b18" onclick=(b18())>Medium</button>
+        <button class="bc6" id="b19" onclick=(b19())>Large</button>
+    </div>
+    
+    <div class="container-2">
+        <h3>Transaction Commands</h3>
+        <button class="bc2" id="b4" onclick=(voidTrans())>Clear</button>
+<!--        <button class="bc1" id="b5" onclick=(discount())>Discount</button>-->
+        <button class="bc2" id="b8" onclick=(quantity())>Quantity</button>
+        <button class="bc3" id="b9" onclick=(eraseLast())>Clear Last</button>
+        <button class="bc1" id="b20" onclick=(managerOp())>Manager Override</button>
+        <div class="mgr" id="toggle" style="visibility: hidden">
+            <button class="bc3" id="b6" onclick=(overrideAdd())>Override Add</button>
+            <button class="bc1" id="b7" onclick=(overrideSub()) style="font-size:10px;">Override Subtract</button>
+            <button class="bc2" id="b6" onclick=(mgrClose())>Exit Override</button>
+<!--            <button class="bc3" id="b6" onclick=(taxExempt())>Tax Exempt</button>-->
+        </div>
+    </div>
+    
+    <div class="container-3">
+        <h3>Totals</h3>
+        <tran id="tran">Transaction Empty</tran>
+<!--
+        <h1 class="total-left">Subtotal:</h1>
+        <h1 class="total-right" id="total">$0.00</h1>
+        <br>
+        <br>
+        <h1 class="tax-left">Sales Tax:</h1>
+        <h1 class="tax-right" id="total">$0.00</h1>
+-->
+        <table style="width:100%">
+            <tr>
+                <th class="tl">Subtotal:</th>
+                <th class="tr" id="total">$0</th>
+            </tr>
+            <tr>
+                <th class="tl">Sales Tax:</th>
+                <th class="tr" id="tax">$0</th>
+            </tr>
+<!--
+            <tr>
+                <th class="tl">Discounts:</th>
+                <th class="tr" id="discount">$0</th>
+            </tr>
+-->
+            <tr>
+                <th class="tl">Grand Total:</th>
+                <th class="tr" id="grand">$0</th>
+            </tr>
+        </table>
+        
+    </div>
+  <script src="src/main.js"></script>
+</body>
+
+</html>

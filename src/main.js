@@ -126,8 +126,8 @@ function voidTrans() {
 
 function overrideAdd() {
     document.getElementById("tran").innerHTML = "Override"; 
-    managerAuth();
-    if (authorization === true) {
+    
+    
         var amount = parseInt(prompt("Amount added to transaction: "));
         total_tran = total_tran + amount;
         getTotal();
@@ -136,14 +136,13 @@ function overrideAdd() {
         
     }
     
-}
+
 function overrideSub() {
     document.getElementById("tran").innerHTML = "Override"; 
-    managerAuth();
-    if (authorization === true) {
+    
         var amount = parseInt(prompt("Amount subtracted from transaction: "));
         total_tran = total_tran - amount;
-    }
+    
     getTotal();
     tax();
     
@@ -185,6 +184,20 @@ function eraseLast() {
     
 }
 
+function managerOp(){
+    managerAuth();
+    if (authorization === true) {
+        hidden(true);
+    }
+}
+function mgrClose(){
+    hidden(false);
+}
+
+function taxExempt(){
+    tax(false);
+}
+
 function getTotal() {
     var totalRounded = Math.round(total_tran * 100) / 100;
    return document.getElementById("total").innerHTML = "$" + totalRounded;
@@ -196,10 +209,16 @@ function getTotal2() {
     
 }
 
-function tax() {    
-    var totalTax = total_tran * 0.07;   
-    var totalTaxRounded = Math.round(totalTax * 100) / 100;
+function tax(boolean) {    
+        if (boolean = true) {
+            var totalTax = total_tran * 0.07;   
+            var totalTaxRounded = Math.round(totalTax * 100) / 100;
+        }
+        if (boolean = false) {
+            var totalTaxRounded = 0;
+        }
     document.getElementById("tax").innerHTML = "$" + totalTaxRounded; 
+    
 }
 function tax2() {    
     var totalTax = total_tran * 0.07;   
@@ -230,6 +249,14 @@ function managerAuth() {
         }
             document.getElementById("name").innerHTML =  authorization;
         }
+
+function hidden(boolean) {
+    if (boolean === true) {
+        document.getElementById("toggle").style.visibility = "visible";
+    } else {
+        document.getElementById("toggle").style.visibility = "hidden";
+    }
     
+}
     
     
